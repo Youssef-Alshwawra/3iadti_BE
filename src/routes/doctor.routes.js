@@ -9,12 +9,15 @@ import {
     addMedicalRecord,
     uploadPatientReport,
     submitClinicForApproval,
-    getClinicStatus
+    getClinicStatus, 
+    getAllDoctors
 } from '../controllers/doctor.controller.js';
 import { authenticate, authorize } from '../middlewares/auth.middleware.js';
 import { upload } from '../config/multer.config.js';
 
 const router = express.Router();
+
+router.get('/', getAllDoctors);
 
 router.use(authenticate);
 router.use(authorize('doctor'));

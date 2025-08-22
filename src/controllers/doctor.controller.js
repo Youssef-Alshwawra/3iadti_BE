@@ -3,7 +3,23 @@ import Appointment from '../models/Appointment.js';
 import MedicalRecord from '../models/MedicalRecord.js';
 import Report from '../models/Report.js';
 import Schedule from '../models/Schedule.js';
+import User from '../models/User.js';
 import { sendEmail } from '../utils/email.js';
+
+export const getAllDoctors = async (req, res) => {
+    try {
+        const doctors = await Doctor.find().populate('userId', 'name email phone');
+        res.status(200).json({
+            success: true,
+            data: doctors
+        });
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            message: error.message
+        });
+    }
+};
 
 export const getDoctorProfile = async (req, res) => {
     try {

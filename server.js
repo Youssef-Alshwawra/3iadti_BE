@@ -14,7 +14,6 @@ import adminRoutes from './src/routes/admin.routes.js';
 import appointmentRoutes from './src/routes/appointment.routes.js';
 import paymentRoutes from './src/routes/payment.routes.js';
 
-runSeeder();
 dotenv.config();
 
 const __filename = fileURLToPath(import.meta.url);
