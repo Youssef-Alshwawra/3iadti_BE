@@ -896,11 +896,4 @@ export const runSeeder = async () => {
         console.error('Fatal error:', error);
         process.exit(1);
     }
-};
-
-runSeeder();
-
-// Run if this file is executed directly
-if (process.argv[1] === new URL(import.meta.url).pathname) {
-    runSeeder();
 }
