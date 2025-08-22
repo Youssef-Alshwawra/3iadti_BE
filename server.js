@@ -4,6 +4,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { runSeeder } from './seed.js';
 
 // Import routes
 import authRoutes from './src/routes/auth.routes.js';
@@ -13,6 +14,7 @@ import adminRoutes from './src/routes/admin.routes.js';
 import appointmentRoutes from './src/routes/appointment.routes.js';
 import paymentRoutes from './src/routes/payment.routes.js';
 
+runSeeder();
 dotenv.config();
 
 const __filename = fileURLToPath(import.meta.url);
